@@ -15,7 +15,6 @@
   * **DB** : PostgreSQL
   * **Fichiers** : S3-compatible
   * **Notifications** : FCM (push), Email (SendGrid/Mailgun), SMS (provider local)&#x20;
-* **Non-objectifs** : pas de chiffrage/prix ni de durée dans ce README.
 
 ---
 
