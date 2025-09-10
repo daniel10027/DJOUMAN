@@ -1,7 +1,6 @@
-# README — Djouman
+# Djouman
 
 **Cahier des charges technique (Clean Architecture) – Équipes Backend (Django), Mobile (Flutter), Web (Angular), DevOps & QA**
-*Basé sur le document “CAHIER DES CHARGES TECHNIQUE – Application DJOUMAN” reçu.*&#x20;
 
 ---
 
