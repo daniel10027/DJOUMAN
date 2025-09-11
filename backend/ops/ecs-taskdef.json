@@ -1,0 +1,31 @@
+{
+  "family": "djouman-app",
+  "networkMode": "awsvpc",
+  "cpu": "512",
+  "memory": "1024",
+  "requiresCompatibilities": ["FARGATE"],
+  "executionRoleArn": "arn:aws:iam::<account>:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::<account>:role/djoumanTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "IMAGE_URI",
+      "essential": true,
+      "portMappings": [{ "containerPort": 8000, "protocol": "tcp" }],
+      "environment": [
+        { "name": "DJANGO_SETTINGS_MODULE", "value": "djouman.settings.production" },
+        { "name": "CELERY_ENABLED", "value": "true" },
+        { "name": "USE_WHITENOISE", "value": "true" },
+        { "name": "OTEL_EXPORTER_OTLP_ENDPOINT", "value": "http://otel-collector:4317" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/djouman",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "web"
+        }
+      }
+    }
+  ]
+}

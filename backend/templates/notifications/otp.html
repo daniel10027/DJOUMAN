@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Votre code OTP</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>.preheader{display:none!important;visibility:hidden;opacity:0;height:0;width:0;overflow:hidden;mso-hide:all}</style>
+  </head>
+  <body style="margin:0;padding:0;background:#f5f7fb;font-family:Arial,Helvetica,sans-serif;color:#111827">
+    <div class="preheader">Votre code de connexion : {{ code }}</div>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f5f7fb;padding:24px 0">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.06)">
+            <tr>
+              <td style="padding:24px 28px;background:#111827;color:#fff;font-weight:bold;font-size:18px">Djouman</td>
+            </tr>
+            <tr>
+              <td style="padding:28px">
+                <h1 style="margin:0 0 12px;font-size:20px;color:#111827">Code de vérification</h1>
+                <p style="margin:0 0 16px;line-height:1.55;color:#374151">
+                  Bonjour {{ user.username }}, voici votre code de connexion :
+                </p>
+                <div style="display:inline-block;padding:12px 18px;border:1px solid #e5e7eb;border-radius:8px;font-weight:700;font-size:22px;letter-spacing:4px">
+                  {{ code }}
+                </div>
+                <p style="margin:16px 0 0;line-height:1.55;color:#6b7280;font-size:13px">
+                  Ce code expire dans <strong>10 minutes</strong>. Si vous n’êtes pas à l’origine de cette demande, ignorez ce message.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:18px 28px;background:#f9fafb;color:#9ca3af;font-size:12px;text-align:center">
+                © {{ now|default_if_none:"" }} Djouman
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
